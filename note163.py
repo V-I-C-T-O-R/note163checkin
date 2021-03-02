@@ -29,7 +29,7 @@ def noteyoudao(YNOTE_SESS: str, user: str, passwd: str):
         total = info['total'] / 1048576
         space = info['space'] / 1048576
         t = time.strftime('%Y-%m-%d %H:%M:%S',
-                          time.localtime(info['time'] / 1000))
+                          time.localtime((info['time'] / 1000) + 28800))
         print(user+'签到成功，本次获取'+str(space) +
               'M, 总共获取'+str(total)+'M, 签到时间'+str(t))
     # cookie 登录失效，改用用户名密码登录
